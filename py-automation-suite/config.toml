@@ -4,9 +4,9 @@ log_level = "INFO"
 
 # Development environment
 [dev]
+log_level = "DEBUG"  # Override default for dev
 database = "sqlite:///dev.db"
 api_url = "https://dev-api.example.com"
-log_level = "DEBUG"  # Override default for dev
 
 # Staging environment
 [staging]

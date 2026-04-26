@@ -1,31 +1,33 @@
-```bash
-python cli.py script-one \
-  --env dev \
-  --path /home/msharathh/data.csv \
-  --paths /home/msharathh/data1.csv /home/msharathh/data2.csv \
-  --dir /home/msharathh/ \
-  --dirs /home/msharathh/type1 /home/msharathh/type2 \
-  --boolean-value True \
-  --number-value 12 \
-  --log-level DEBUG
-```
+# Automation scripts suite
 
-Set Up a Virtual Environment
-Install the Package
+## Setup
 
 ```bash
-pip install -e .                            # Install with only runtime dependencies
-pip install -e ".[dev]"                     # Install with development tools
-pip install -e ".[dev,js]"
-pip install -e ".[all]"                     # Install everything at once
+uv sync --no-dev                               # Automatically crates .venv and install core deps
+uv pip install -e .                            # Install core only + registers CLI cmd
 
-# Check if the command is found
-which automate          # Linux/macOS
-where automate          # Windows
-
-
-automate --help                             # Show help
+uv run automate --help                         # top level help
+uv run automate script1 --help                 # script1 specific help
 
 # Run a Script
-automate --env dev script-one ./data/input/sample.html
+uv run automate script1 \
+  --path ./settings.yaml \
+  --paths ./settings.yaml \
+  --paths ./pyproject.toml \
+  --out-dir ./output \
+  --log-level INFO \
+  --number-value 5 \
+  --boolean-value
+
+uv run automate script2 \
+  --out-dir ./output \
+  --log-level INFO \
+  --number-value 5
+```
+
+# Development commands fro Lint
+
+```
+chmod +x lint.sh
+uv run bash lint.sh
 ```

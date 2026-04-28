@@ -25,7 +25,7 @@ uv run automate script2 \
   --number-value 5
 ```
 
-# Development commands fro Lint
+# Development commands for Lint
 
 ```
 chmod +x lint.sh

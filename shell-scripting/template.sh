@@ -3,10 +3,10 @@
 # ==========================================================================================
 # Script Name: demo.sh
 # Description: line 1
-               line 2
-# Author: [your name/team]
-# Date: 2026-05-15
-# Usage: ./demo.sh
+#              line 2
+# Author:      [your name/team]
+# Date:        2026-05-15
+# Usage:       ./demo.sh
 # ==========================================================================================
 
 set -euo pipefail
